@@ -1,4 +1,5 @@
 import { Component, PureComponent } from "react";
+import { Link } from "react-router-dom";
 
 class WeatherHistory extends PureComponent {
   constructor(props) {
@@ -69,9 +70,12 @@ class WeatherHistory extends PureComponent {
                     {city.main.temp} <sup>o</sup>C
                   </td>
                   <td>
-                    <button onClick={() => setWeatherDetails({ ...city })}>
+                    <Link
+                      to="/wether-details"
+                      onClick={() => setWeatherDetails({ ...city })}
+                    >
                       View
-                    </button>
+                    </Link>
                     <button onClick={() => this.removeACity(index)}>
                       Delete
                     </button>

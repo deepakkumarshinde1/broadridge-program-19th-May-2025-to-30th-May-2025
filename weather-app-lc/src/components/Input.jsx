@@ -8,7 +8,9 @@ const UNITS = "metric";
 function Input(props) {
   let navigate = useNavigate();
   let { setHistory, setWeatherDetails, cityName, setCityName, history } = props;
-  let inputHandel = (event) => setCityName(event.target.value);
+  let inputHandel = (event) => {
+    setCityName(event.target.value);
+  };
 
   let getWeatherDetails = async (url) => {
     try {

@@ -18,7 +18,13 @@ function App() {
         history={history}
       />
       {weatherDetails && <WeatherDetails weatherDetails={weatherDetails} />}
-      <WeatherHistory history={history} />
+      {history.length > 0 ? (
+        <WeatherHistory
+          history={history}
+          setWeatherDetails={setWeatherDetails}
+          setHistory={setHistory}
+        />
+      ) : null}
     </>
   );
 }

@@ -3,28 +3,27 @@ import Swal from "sweetalert2";
 
 function WeatherDetails(props) {
   let { weatherDetails } = props;
-  console.log("init");
+  // console.log("init");
 
   useEffect(() => {
-    console.log("mounting");
+    // console.log("mounting");
 
     return () => {
-      console.log("unmounting");
+      // console.log("unmounting");
     };
   }, []);
 
   useEffect(() => {
-    Swal.fire({
-      title: "New City Found",
-      text: "here are details",
-      icon: "success",
-      timer: 2000,
-    });
+    // Swal.fire({
+    //   title: "New City Found",
+    //   text: "here are details",
+    //   icon: "success",
+    //   timer: 2000,
+    // });
   }, [weatherDetails]);
 
   return (
     <>
-      {console.log("render")}
       <div style={{ border: "1px solid black" }}>
         <h1>{weatherDetails.name}</h1>
         <p>

@@ -1,0 +1,15 @@
+{
+  "carts": [],
+  "products": [
+    { "name": "Laptop", "stock": 25 },
+    { "name": "Smartphone", "stock": 50 },
+    { "name": "Headphones", "stock": 75 },
+    { "name": "Monitor", "stock": 30 },
+    { "name": "Keyboard", "stock": 100 },
+    { "name": "Mouse", "stock": 80 },
+    { "name": "Printer", "stock": 20 },
+    { "name": "Webcam", "stock": 45 },
+    { "name": "External Hard Drive", "stock": 15 },
+    { "name": "Router", "stock": 60 }
+  ]
+}

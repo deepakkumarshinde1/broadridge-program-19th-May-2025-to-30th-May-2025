@@ -1,0 +1,16 @@
+.menu > li > a {
+  text-decoration: none;
+}
+
+.menu > li > a:hover,
+.menu > li > .active {
+  text-decoration: underline;
+}
+
+.header-shadow {
+  box-shadow: 0 2px 8px 0 gray;
+}
+
+.blog-item {
+  width: 20%;
+}

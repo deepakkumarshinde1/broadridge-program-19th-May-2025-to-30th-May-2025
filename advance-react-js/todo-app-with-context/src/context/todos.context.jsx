@@ -1,6 +1,6 @@
 import { createContext, useContext, useMemo, useState } from "react";
 
-const TodosContext = createContext({});
+export const TodosContext = createContext({});
 
 export function useTodosContext() {
   return useContext(TodosContext);

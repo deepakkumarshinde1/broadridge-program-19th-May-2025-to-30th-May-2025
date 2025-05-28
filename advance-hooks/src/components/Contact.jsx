@@ -1,3 +1,4 @@
+import { Component } from "react";
 import { withParams } from "../hoc/common.hoc";
 
 class Contact extends Component {

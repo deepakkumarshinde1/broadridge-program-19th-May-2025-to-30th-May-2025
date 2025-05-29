@@ -1,7 +1,11 @@
+import Counter from "./components/Counter";
+import Todo from "./components/Todo";
+
 function App() {
   return (
     <center>
-      <h1>Testing</h1>
+      {/* <Counter text={false} /> */}
+      <Todo />
     </center>
   );
 }

@@ -1,0 +1,8 @@
+.product-item {
+  transition: transform 1s, box-shadow 1s;
+  cursor: pointer;
+}
+.product-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 8px 0 gray;
+}

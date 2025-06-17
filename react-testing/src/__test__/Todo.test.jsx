@@ -6,9 +6,9 @@ test("Check for input change", async () => {
   render(<Todo />);
   let input = screen.getByTestId("todo-input");
   expect(input).toBeInTheDocument();
-  fireEvent.change(input, { target: { value: "Task-1" } });
+  fireEvent.change(input, { target: { value: "Task-2" } });
   let updatedInput = await waitFor(() => screen.getByTestId("todo-input"));
-  expect(updatedInput.value).toContain("Task-1");
+  expect(updatedInput.value).toContain("Task-2");
 });
 
 test("to check for valid input list", async () => {

@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { getProductList, getSingleProduct } from "../service/product.service";
 
 import { createContext, useContext, useState, useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 let ProductContext = createContext({});
 export function useProductContext() {
@@ -12,9 +13,18 @@ export function ProductContextProvider({ children }) {
   let [list, setList] = useState([]);
   let [productDetails, setProductDetails] = useState(null);
   let navigate = useNavigate();
+  let {
+    data: result,
+    error,
+    isLoading,
+    refetch: getProducts,
+  } = useQuery({
+    queryKey: ["product"],
+    queryFn: getProductList,
+    enabled: false,
+  });
 
-  let getProducts = async () => {
-    let result = await getProductList();
+  useEffect(() => {
     if (result) {
       let newResult = result.sort((a, b) => {
         let _a = a.category.toLowerCase();
@@ -25,7 +35,7 @@ export function ProductContextProvider({ children }) {
       });
       setList(newResult);
     }
-  };
+  }, [result]);
   let getSingleProductDetails = async (id) => {
     let details = await getSingleProduct(id);
     if (details) {

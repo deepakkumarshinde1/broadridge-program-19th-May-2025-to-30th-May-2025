@@ -4,7 +4,7 @@ import { getProductList, getSingleProduct } from "../service/product.service";
 import { createContext, useContext, useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 
-let ProductContext = createContext({});
+export let ProductContext = createContext({});
 export function useProductContext() {
   return useContext(ProductContext);
 }
@@ -54,8 +54,6 @@ export function ProductContextProvider({ children }) {
     setProductDetails,
   };
   return (
-    <ProductContext.Provider value={shared}>
-      {children}{" "}
-    </ProductContext.Provider>
+    <ProductContext.Provider value={shared}>{children}</ProductContext.Provider>
   );
 }

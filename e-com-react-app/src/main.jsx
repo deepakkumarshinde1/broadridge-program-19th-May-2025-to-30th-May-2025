@@ -11,10 +11,8 @@ let client = new QueryClient();
 
 createRoot(document.getElementById("root")).render(
   <QueryClientProvider client={client}>
-    <BrowserRouter>
-      <ProductContextProvider>
-        <App />
-      </ProductContextProvider>
-    </BrowserRouter>
+    <ProductContextProvider>
+      <App />
+    </ProductContextProvider>
   </QueryClientProvider>
 );

@@ -19,6 +19,10 @@ test("to check for valid input list", async () => {
   fireEvent.click(screen.getByRole("button"));
   fireEvent.change(input, { target: { value: "123a" } });
   fireEvent.click(screen.getByRole("button"));
+  fireEvent.change(input, { target: { value: "123" } });
+  fireEvent.click(screen.getByRole("button"));
+  fireEvent.change(input, { target: { value: "   " } });
+  fireEvent.click(screen.getByRole("button"));
 
   let list = await waitFor(() => screen.getByTestId("todo-list"));
   expect(list.childNodes.length).toBe(2);

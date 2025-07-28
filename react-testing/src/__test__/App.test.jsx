@@ -2,17 +2,28 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
 import App from "../App";
 
-describe("common check", () => {
-  test("check for h1 element", () => {
+describe(" h1 tag", () => {
+  test("check h1 tag", () => {
     render(<App />);
-    // let element = screen.getByRole("heading");
-    let element = screen.getByTestId("h1-tag");
-    expect(element.innerHTML).toContain("Hello");
+    let h1Element = screen.getByTestId("h1-tag");
+    expect(h1Element).toBeInTheDocument();
   });
 
-  test("check form menu items count", () => {
+  test("check for text in h1 tag", () => {
     render(<App />);
-    let menu = screen.getByTestId("menu");
-    expect(menu.childElementCount).toBe(4);
+    let element = screen.getByTestId("h1-text");
+    expect(element.innerHTML).toBe("Hello");
   });
+
+  test("check for h1 count", () => {
+    render(<App />);
+    let element = screen.getAllByRole("heading");
+    expect(element.length).toBe(2);
+  });
+});
+
+test("Check menu count", () => {
+  render(<App />);
+  let element = screen.getByTestId("menu");
+  expect(element.childNodes.length).toBe(5);
 });

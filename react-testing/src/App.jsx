@@ -12,7 +12,7 @@ function App() {
         <li>Home</li>
         <li>Home</li>
       </ul>
-      {/* <Counter text={false} /> */}
+      <Counter text={false} />
       <Todo />
     </center>
   );

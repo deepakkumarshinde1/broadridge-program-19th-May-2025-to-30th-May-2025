@@ -25,9 +25,9 @@ test("check a state after click", async () => {
   expect(counterTextElement.innerHTML).toContain("0");
 
   fireEvent.click(btnElement);
-  // fireEvent.click(btnElement);
+  fireEvent.click(btnElement);
   // fireEvent.click(btnElement);
 
   let updateElement = await waitFor(() => screen.getByTestId("counter-value"));
-  expect(updateElement.innerHTML).toContain("1");
+  expect(updateElement.innerHTML).toContain("2");
 });

@@ -30,7 +30,6 @@ function App() {
         },
       ],
     },
-    {},
   ]);
   let handelClick = () => {
     console.log(login);
